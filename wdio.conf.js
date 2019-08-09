@@ -189,7 +189,8 @@ exports.config = {
     // Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
     afterTest: function (test) {
         let session = browser.sessionId
-        var message = console.log(`SauceOnDemandSessionID=${session} job-name=Derek Ross Jenkins World Demo`)
+        let build = process.env.BUILD_TAG
+        var message = console.log(`SauceOnDemandSessionID=${session} job-name=${build}`)
 	},
     //
     // Hook that gets executed after the suite has ended
