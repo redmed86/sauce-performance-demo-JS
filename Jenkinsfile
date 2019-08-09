@@ -4,15 +4,13 @@ node {
   }
 
   stage('Test') {
-    sauce('saucelabs') {
-      sauceconnect(useGeneratedTunnelIdentifier: true, verboseLogging: true) {
+    sauce('derek_sauce_creds') {
         nodejs('11.9') {
           sh 'npm install'
           sh 'npm run test'
         }
       }
     }
-  }
 
   stage('Collect Results') {
     step([$class: 'SauceOnDemandTestPublisher'])
