@@ -197,7 +197,7 @@ exports.config = {
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
     after: function (result, capabilities, specs) {
-        return browser.sessionID();
+        return browser.sessionID;
     },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
