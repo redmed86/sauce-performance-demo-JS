@@ -1,4 +1,4 @@
-node('docker') {
+node {
   stage('Checkout') {
     checkout scm
   }
@@ -13,7 +13,7 @@ node('docker') {
       }
     }
   }
-  
+
   stage('Collect Results') {
     step([$class: 'SauceOnDemandTestPublisher'])
   }
